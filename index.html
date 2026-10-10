@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestistock — Viste tu estilo con confianza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#0c0b0b',
+                        white: '#f5f0eb',
+                        cream: '#bed0f5',
+                        accent: '#3262ff',
+                        accent2: '#0410bb',
+                        gray: '#6b6560',
+                        light: '#faf7f4',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        playfair: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light text-black font-sans">
+    <div class="shadow-md flex flex-col justify-center px-4 py-3 md:py-4 text-xs font-extrabold">
+        <nav id="navbar" class="relative flex flex-row items-center justify-between gap-4">
+            <a href="#">
+                <img src="../img/logo.jpg" alt="Mi imagen"
+                    class="block ml-0 md:ml-7 w-24 md:w-32 h-auto rounded-full object-cover border box-shadow-0px-4px-6px-rgba(0,0,0,0.1) transition-transform duration-300 hover:scale-105">
+            </a>
+            <input id="mobile-menu" type="checkbox" class="peer sr-only xl:hidden" aria-label="Abrir menú">
+            <label for="mobile-menu"
+                class="flex cursor-pointer flex-col gap-1.5 rounded p-2 xl:hidden"
+                aria-label="Alternar menú">
+                <span class="h-0.5 w-6 bg-black"></span>
+                <span class="h-0.5 w-6 bg-black"></span>
+                <span class="h-0.5 w-6 bg-black"></span>
+            </label>
+            <div id="navLinks"
+                class="absolute left-0 right-0 top-full z-50 hidden flex-col gap-5 bg-light p-5 shadow-md peer-checked:flex xl:static xl:flex xl:flex-row xl:items-center xl:justify-between xl:gap-4 xl:bg-transparent xl:p-0 xl:shadow-none">
+                <div class="flex flex-col gap-4 font-bold text-base text-gray uppercase xl:flex-row xl:items-center xl:gap-8 xl:text-xl">
+                    <a href="#categorias"
+                        class="hover:text-accent transition-transform duration-300 hover:scale-105">Categorías</a>
+                    <a href="#nuevos"
+                        class="hover:text-accent transition-transform duration-300 hover:scale-105">Novedades</a>
+                    <a href="#descuentos"
+                        class="hover:text-accent transition-transform duration-300 hover:scale-105">Descuentos</a>
+                    <a href="#nosotros"
+                        class="hover:text-accent transition-transform duration-300 hover:scale-105">Nosotros</a>
+                </div>
+                <div id="navActions" class="flex flex-col gap-3 font-bold text-base text-gray xl:flex-row xl:gap-2 xl:text-xl">
+                    <a href="login.html">
+                    <button
+                        class="px-4 py-2 bg-accent text-black rounded-md hover:bg-black hover:text-white transition-colors duration-300"
+                        onclick="openModal('login')">Iniciar Sesión</button></a>
+                    <a href="register.html">
+                    <button
+                        class="px-4 py-2 bg-black text-white rounded-md hover:bg-accent hover:text-black transition-colors duration-300"
+                        onclick="openModal('register')">Registrarse</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <section class="grid grid-cols-1 overflow-hidden md:h-screen md:min-h-[640px] md:grid-cols-2 md:pt-[72px]">
+        <div class="flex flex-col justify-center bg-[light] px-5 py-12 sm:px-8 md:-translate-y-40 md:py-20 md:pr-8 md:pl-10 lg:pl-20 animate-fade-up">
+            <p class="translate-y-[10px] text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium mb-5">Nueva colección
+                2026</p>
+            <h1 class="font-serif text-[clamp(2.8rem,5vw,5rem)] leading-[1.05] font-black mb-6 ">Viste tu estilo<br>con
+                <em class="text-accent">confianza</em>
+            </h1>
+            <p class="text-base leading-[1.7] text-[gray] max-w-[400px] mb-10">
+                Descubre prendas cuidadosamente seleccionadas para cada ocasión. Moda que habla por ti, con calidad que
+                se
+                siente.</p>
+            <div class="gap-4 flex flex-wrap">
+                <a href="#nuevos"
+                    class="px-8 py-2 bg-black text-white hover:bg-accent hover:text-white transition-transform duration-300 hover:scale-105">Ver
+                    Colección</a>
+                <a href="#descuentos"
+                    class="px-8 py-2 bg-white text-black border border-black hover:bg-accent hover:text-white transition-transform duration-300 hover:scale-105">Ofertas
+                    del Día</a>
+            </div>
+            <div class="flex flex-wrap gap-x-6 gap-y-4 mt-10 pt-8 border-t border-[cream] sm:gap-x-10 md:mt-14 md:pt-10">
+                <div><span class="font-serif text-2xl font-bold text-[black] block">2.4K+</span><span
+                        class="text-[0.72rem] tracking-[0.1em] uppercase text-[gray]">Productos</span></div>
+                <div><span class="font-serif text-2xl font-bold text-[black] block">98%</span> <span
+                        class="text-[0.72rem] tracking-[0.1em] uppercase text-[gray]">Satisfacción</span></div>
+                <div><span class="font-serif text-2xl font-bold text-[black] block">14K</span> <span
+                        class="text-[0.72rem] tracking-[0.1em] uppercase text-[gray]">Clientes</span></div>
+            </div>
+        </div>
+        <div class="min-w-0">
+            <img src="../img/images.jpg" alt="Mi imagen"
+                class="block ml-auto w-full max-w-[800px] border-2 border-black rounded-lg h-auto md:-translate-x-5 md:-translate-y-[40px]">
+            <div
+                class="absolute hidden bottom-10 left-[-20px] bg-[accent] py-5 px-8 font-serif text-[1.1rem] font-bold text-[black] shadow-[black]">
+                -30% esta semana</div>
+        </div>
+    </section>
+
+    <div
+        class="bg-[black] overflow-hidden py-3.5 flex items-center text-[0.72rem] tracking-[0.18em] uppercase text-[white] font-medium">
+        <div class="flex gap-15 whitespace-nowrap animate-marquee">
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">Nueva
+                Colección Primavera 2026</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">30%
+                OFF en ropa de niños</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">Nueva
+                Colección Primavera 2026</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">30%
+                OFF en ropa de niños</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">Nueva
+                Colección Primavera 2026</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">30%
+                OFF en ropa de niños</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">Nueva
+                Colección Primavera 2026</span>
+            <span
+                class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium flex items-center gap-6 after:content-['◆'] after:text-[0.5rem]">30%
+                OFF en ropa de niños</span>
+        </div>
+    </div>
+
+    <section class="px-4 py-12 sm:px-8 md:px-12 md:py-16 lg:px-20 lg:py-25" id="categorias">
+        <div class="mb-10 md:mb-15">
+            <p class="text-[0.72rem] tracking-[0.18em] uppercase text-accent font-medium mb-3">Explorar</p>
+            <h2 class="font-serif text-[clamp(2rem,3.5vw,3rem)] font-bold leading-[1.1]">Categorías</h2>
+            <p class="text-[gray] text-[0.95rem] mt-3">Encuentra exactamente lo que buscas</p>
+        </div>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+            <div
+                class="relative overflow-hidden aspect-[3/4] cursor-pointer bg-cream col-span-1 row-span-1 lg:row-span-2 lg:aspect-auto">
+                <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600&q=80" alt="Ropa Mujer"
+                    class="w-full h-full px-6 py-7 object-cover grayscale-[30%] transition-[transform,filter] duration-500 ease-in-out scale-[1.06] grayscale-0 ">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.75)] to-transparent to-[60%] flex flex-col justify-end padding-7 px-7">
+                    <p class="font-serif text-xl font-bold text-[white] mb-1.5">Ropa Mujer</p>
+                    <p class="text-[0.8rem] text-[rgba(245,240,235,0.7)] tracking-[0.06em]">847 productos</p>
+                </div>
+                <div
+                    class="absolute top-5 right-5 w-10 h-10 bg-accent flex items-center justify-center opacity-0 -translate-y-2 transition-all duration-300 opacity-100 translate-y-0 transition-transform duration-300 hover:scale-105">
+                    →</div>
+            </div>
+            <div class="relative overflow-hidden aspect-[3/4] cursor-pointer bg-cream">
+                <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&q=80" alt="Ropa Hombre"
+                    class="w-full h-full px-6 py-7 object-cover grayscale-[30%] transition-[transform,filter] duration-500 ease-in-out scale-[1.06] grayscale-0 ">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.75)] to-transparent to-[60%] flex flex-col justify-end padding-7 px-7">
+                    <p class="font-serif text-xl font-bold text-[white] mb-1.5">Ropa Hombre</p>
+                    <p class="text-[0.8rem] text-[rgba(245,240,235,0.7)] tracking-[0.06em]">612 productos</p>
+                </div>
+                <div
+                    class="absolute top-5 right-5 w-10 h-10 bg-accent flex items-center justify-center opacity-0 -translate-y-2 transition-all duration-300 opacity-100 translate-y-0 transition-transform duration-300 hover:scale-105">
+                    →</div>
+            </div>
+            <div class="relative overflow-hidden aspect-[3/4] cursor-pointer bg-cream">
+                <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&q=80" alt="Ropa Niño"
+                    class="w-full h-full px-6 py-7 object-cover grayscale-[30%] transition-[transform,filter] duration-500 ease-in-out scale-[1.06] grayscale-0 ">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.75)] to-transparent to-[60%] flex flex-col justify-end padding-7 px-7">
+                    <p class="font-serif text-xl font-bold text-[white] mb-1.5">Ropa Niño</p>
+                    <p class="text-[0.8rem] text-[rgba(245,240,235,0.7)] tracking-[0.06em]">430 productos</p>
+                </div>
+                <div
+                    class="absolute top-5 right-5 w-10 h-10 bg-accent flex items-center justify-center opacity-0 -translate-y-2 transition-all duration-300 opacity-100 translate-y-0 transition-transform duration-300 hover:scale-105">
+                    →</div>
+            </div>
+            <div class="relative overflow-hidden aspect-[3/4] cursor-pointer bg-cream">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Calzado"
+                    class="w-full h-full px-6 py-7 object-cover grayscale-[30%] transition-[transform,filter] duration-500 ease-in-out scale-[1.06] grayscale-0 ">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.75)] to-transparent to-[60%] flex flex-col justify-end padding-7 px-7">
+                    <p class="font-serif text-xl font-bold text-[white] mb-1.5">Calzado</p>
+                    <p class="text-[0.8rem] text-[rgba(245,240,235,0.7)] tracking-[0.06em]">318 productos</p>
+                </div>
+                <div
+                    class="absolute top-5 right-5 w-10 h-10 bg-accent flex items-center justify-center opacity-0 -translate-y-2 transition-all duration-300 opacity-100 translate-y-0 transition-transform duration-300 hover:scale-105">
+                    →</div>
+            </div>
+            <div class="relative overflow-hidden aspect-[3/4] cursor-pointer bg-cream ">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80" alt="Accesorios"
+                    class="w-full h-full px-6 py-7 object-cover grayscale-[30%] transition-[transform,filter] duration-500 ease-in-out scale-[1.06] grayscale-0 ">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.75)] to-transparent to-[60%] flex flex-col justify-end padding-7 px-7">
+                    <p class="font-serif text-xl font-bold text-[white] mb-1.5">Accesorios</p>
+                    <p class="text-[0.8rem] text-[rgba(245,240,235,0.7)] tracking-[0.06em]">195 productos</p>
+                </div>
+                <div
+                    class="absolute top-5 right-5 w-10 h-10 bg-accent flex items-center justify-center opacity-0 -translate-y-2 transition-all duration-300 opacity-100 translate-y-0 transition-transform duration-300 hover:scale-105">
+                    →</div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white grid grid-cols-2 gap-8 p-6 sm:p-10 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-15 lg:p-20">
+        <div class="footer-brand col-span-2 md:col-span-1">
+            <span class="font-serif text-[1.6rem] font-black text-[white] mb-5 block">Vestistock</span>
+            <p class="text-[0.85rem] text-[rgba(245,240,235,0.45)] leading-[1.7] max-w-[260px]">Tu tienda de moda de confianza en Colombia. Prendas de calidad para toda la familia a
+                los
+                mejores precios.</p>
+            <div class="footer-social">
+            </div>
+        </div>
+        <div >
+            <h4 class="text-[0.72rem] tracking-[0.15em] uppercase text-accent font-semibold mb-5">Tienda</h4>
+                    <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Novedades</a>
+                    <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Mujer</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Hombre</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Niños</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Calzado</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Accesorios</a>
+        </div>
+        <div >
+            <h4  class="text-[0.72rem] tracking-[0.15em] uppercase text-accent font-semibold mb-5">Ayuda</h4>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Mi cuenta</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Seguir pedido</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Devoluciones</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Tallas</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Contacto</a>
+        </div>
+        <div>
+            <h4  class="text-[0.72rem] tracking-[0.15em] uppercase text-accent font-semibold mb-5">Empresa</h4>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Nosotros</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Blog</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Trabaja con nosotros</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Términos</a>
+            <a href="#" class="block text-[rgba(245,240,235,0.45)] text-[0.85rem] no-underline mb-2.5 transition-colors duration-200">Privacidad</a>
+        </div>
+    </footer>
+    <div class="bg-[black] py-5 px-4 sm:px-8 md:px-20 border-t border-[rgba(201,169,110,0.1)] flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center">
+        <p class="text-[0.75rem] text-[rgba(245,240,235,0.3)]">© 2026 Vestistock. Todos los derechos reservados.</p>
+        <p class="text-[0.75rem] text-[rgba(245,240,235,0.3)]">Hecho con ♥ en Colombia</p>
+    </div>
+</body>
+
+</html>
